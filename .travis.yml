@@ -1,0 +1,29 @@
+---
+
+sudo: false
+
+language: node_js
+
+node_js:
+    - 0.10
+    - 0.12
+    - 4
+    - 5
+
+cache:
+    directories:
+        - node_modules
+
+script:
+    - npm run build
+    - npm run lint
+    - npm run test
+
+deploy:
+  provider: npm
+  email: simonc@linux.com
+  api_key:
+    secure: AfkB9NoLAyhdsA/0KYQxMRapABvawz8a5UATs6yWO7Nh/ngwJQ5eBOXZo0oo4RqpdploYG6AHI5PyNb5FDV4IvI92oFy+MrdPefw7AgQXP+qwiGuwoxs5KnUM6DD5s+F0ClJbtMoWaRCdkD3HXNmCPeM9eDrIbD3scqXiH9wmK2KBD4M+7TKpJ68mL8zd+oE3Lfv4SQiE7PjTMP4Iy6JsNcJFHNp2/QTW9drGOlPSnJTY4Usllc7caaJ6iBJ2EoWNxZ+JhxpqHpPHt2CXNeSltLltw84C2179aiXhKSx7EZwWb85QK3JgGwRWBorRnUPIgltVxIc/Otr2y4mgWw/A1XWqqifEC0PtZoqBJEc13A8YmyIXxKnO2QcTl5sJVifjc9/EEXz9e4Xsmd5u7xlRk/KC7Kh2fOhgatekarjsdBxHSJqtAstd+6xEBQHwS5IKFGDl5iGyTzc7yKoQH/SdoeWIp688YmKrgqhMWc5+c58uvSQn2AjcUyDtG433CMK01yImEY24luk56kL8YGequoznWKsm5NU3PZ9UOENtHrbkcaOmgLp216VxeaQ5BN7/fnJ57Uh0beiPqSwMF88R5RWM8jDlzOgMwS5vRrbOqZp8I0LfiLNBrxJr9xd7STT/Rk6bwySNBw7y2c4TYGp0gZmhjLHN1KH4UoARLPiK4w=
+  on:
+    tags: true
+    repo: cozy/cozy-url-sdk
