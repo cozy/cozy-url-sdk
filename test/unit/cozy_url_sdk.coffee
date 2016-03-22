@@ -119,8 +119,11 @@ describe "Cozy Url SDK", ->
         it "possible to modify the host with HOME_HOST.", ->
             process.env.HOME_HOST = 'tsohlacol'
             cozyUrl.home.host().should.equal 'tsohlacol'
-        it "possible to modify the port with HOME_PORT.", ->
-            process.env.HOME_PORT = '3019'
+        it "possible to modify the port with DEFAULT_REDIRECT_PORT.", ->
+            process.env.DEFAULT_REDIRECT_PORT = '3019'
             cozyUrl.home.port().should.equal '3019'
+        it "possible to modify the port with HOME_PORT.", ->
+            process.env.HOME_PORT = '3020'
+            cozyUrl.home.port().should.equal '3020'
         it "get the url with HOME_SCHEMA, HOME_HOST, HOME_PORT.", ->
-            cozyUrl.home.url().should.equal 'ptth://tsohlacol:3019'
+            cozyUrl.home.url().should.equal 'ptth://tsohlacol:3020'
