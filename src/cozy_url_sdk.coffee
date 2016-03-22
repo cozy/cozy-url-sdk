@@ -26,6 +26,7 @@ module.exports =
 
     home:
         schema: -> process.env.HOME_SCHEMA or 'http'
-        port:   -> process.env.HOME_PORT   or '9103'
+        port:   -> process.env.HOME_PORT or process.env.DEFAULT_REDIRECT_PORT \
+                                           or '9103'
         host:   -> process.env.HOME_HOST   or 'localhost'
         url:    -> "#{@schema()}://#{@host()}:#{@port()}"
