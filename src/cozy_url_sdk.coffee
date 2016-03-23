@@ -4,6 +4,7 @@ module.exports =
         schema: -> process.env.COUCH_SCHEMA or 'http'
         port:   -> process.env.COUCH_PORT   or '5984'
         host:   -> process.env.COUCH_HOST   or 'localhost'
+        name:   -> process.env.COUCH_NAME   or process.env.DB_NAME or 'cozy'
         url:    -> "#{@schema()}://#{@host()}:#{@port()}"
 
     controller:

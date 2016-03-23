@@ -1,6 +1,6 @@
 {
   "name": "cozy-url-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Help development to get a url on Cozy",
   "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozycloud.cc/)",
   "license": "MIT",
