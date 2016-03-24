@@ -12,6 +12,8 @@ describe "Cozy Url SDK", ->
             cozyUrl.couch.host().should.equal 'localhost'
         it "gets the port.", ->
             cozyUrl.couch.port().should.equal '5984'
+        it "gets the database name.", ->
+            cozyUrl.couch.name().should.equal 'cozy'
         it "gets the url.", ->
             cozyUrl.couch.url().should.equal 'http://localhost:5984'
 
@@ -24,6 +26,12 @@ describe "Cozy Url SDK", ->
         it "possible to modify the port with COUCH_PORT.", ->
             process.env.COUCH_PORT = '4895'
             cozyUrl.couch.port().should.equal '4895'
+        it "possible to modify the database name with DB_NAME.", ->
+            process.env.DB_NAME = 'yzoc'
+            cozyUrl.couch.name().should.equal 'yzoc'
+        it "possible to modify the database name with COUCH_NAME.", ->
+            process.env.COUCH_NAME = 'cozy2'
+            cozyUrl.couch.name().should.equal 'cozy2'
         it "get the url with COUCH_SCHEMA, COUCH_HOST, COUCH_PORT.", ->
             cozyUrl.couch.url().should.equal 'ptth://tsohlacol:4895'
 
